@@ -11,7 +11,7 @@ Padding textFromFieldBuild(String hintText) {
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
-        obscureText: hintText.contains("E-mail") ? false : true,
+        obscureText: hintText.contains("Password") ? true : false,
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hintText,
