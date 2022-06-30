@@ -6,6 +6,11 @@ const TextStyle titleStyleBold =
 const TextStyle titleStyleRegular =
     TextStyle(fontWeight: FontWeight.w400, fontSize: 20);
 
+const TextStyle onboardingTitleStyle =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 20);
+
+const TextStyle onboardingContentStyle = TextStyle(fontSize: 15);
+
 List<BoxShadow> textFromFieldShadow = [
   BoxShadow(
       color: Color(0xFFF6F6F6),
