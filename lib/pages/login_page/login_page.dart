@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:wardrobe_app/components/textfieldform.dart';
 import 'package:wardrobe_app/constants/styles.dart';
-import 'package:wardrobe_app/screens/login_page/login_page.dart';
+import 'package:wardrobe_app/pages/forgot_password_page/forgot_password_page.dart';
+import 'package:wardrobe_app/pages/register_page/register_page.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
-  _RegisterPageState();
+class _LoginPageState extends State<LoginPage> {
+  _LoginPageState();
 
   @override
   Widget build(BuildContext context) {
@@ -27,25 +28,33 @@ class _RegisterPageState extends State<RegisterPage> {
               Spacer(),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text("Create Account,", style: titleStyleBold),
+                child: Text("Welcome,", style: titleStyleBold),
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child:
-                    Text("Sign up to get started!", style: titleStyleRegular),
+                child: Text("Sign in to contuine!", style: titleStyleRegular),
               ),
               Spacer(),
-              textFromFieldBuild("Full name"),
               textFromFieldBuild("E-mail"),
               textFromFieldBuild("Password"),
-              textFromFieldBuild("Password"),
+              Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (buildContext) => ForgotPasswordPage()));
+                    },
+                    child: Text("Forgot Password?")),
+              ),
               Spacer(),
               ElevatedButton(
                 onPressed: () {},
                 child: Container(
                   alignment: Alignment.center,
                   child: Text(
-                    "\nRegister\n",
+                    "\nLogin\n",
                   ),
                 ),
                 style: ElevatedButton.styleFrom(primary: Color(0xff323232)),
@@ -55,7 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Do you have an account? ",
+                    "Don’t have an account?",
                     style: TextStyle(color: Color(0xff969696)),
                   ),
                   GestureDetector(
@@ -63,10 +72,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (buildContext) => LoginPage()));
+                              builder: (buildContext) => RegisterPage()));
                     },
                     child: Text(
-                      " Login now.",
+                      " Register now.",
                     ),
                   )
                 ],

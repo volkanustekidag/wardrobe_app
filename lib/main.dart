@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wardrobe_app/screens/login_page/login_page.dart';
-import 'package:wardrobe_app/screens/register_page/register_page.dart';
+import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_home.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: OnboardingPage(),
     );
   }
 }
