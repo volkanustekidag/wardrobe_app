@@ -58,7 +58,18 @@ flutter:
      - assets/logo/wardrobe_logo.png
      - assets/logo/onboarding_logo.png
      - assets/logo/onboarding2_image.png
+     - assets/logo/appbar_logo.png
+     - assets/icons/menu_icon.png
+     - assets/icons/bCalendar.png
+     - assets/icons/tCalendar.png
+     - assets/icons/bComb.png
+     - assets/icons/tComb.png
+     - assets/icons/tUser.png
+     - assets/icons/bUser.png
+     - assets/icons/bWardrobe.png
+     - assets/icons/tWardrobe.png
      - assets/succes.png
+     - assets/wardrobe.png
       
 
   # An image asset can refer to one or more resolution-specific "variants", see
