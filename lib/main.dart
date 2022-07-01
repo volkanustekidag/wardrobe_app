@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_home.dart';
+import 'package:wardrobe_app/constants/colors.dart';
+import 'package:wardrobe_app/pages/home_page/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,12 +10,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: OnboardingPage(),
+          accentColor: primaryColor,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              backgroundColor: primaryColor,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.grey),
+          appBarTheme: AppBarTheme(
+            backgroundColor: primaryColor,
+          )),
+      home: HomePage(),
     );
   }
 }
