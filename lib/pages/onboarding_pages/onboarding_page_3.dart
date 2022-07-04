@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 import 'package:wardrobe_app/pages/login_page/login_page.dart';
@@ -23,8 +24,12 @@ class OnboardingPage3 extends StatelessWidget {
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
                 ),
-                Image.asset(
-                  "assets/succes.png",
+                Positioned(
+                  top: MediaQuery.of(context).size.height * 0.1,
+                  left: MediaQuery.of(context).size.width * 0.2,
+                  child: SvgPicture.asset(
+                    "assets/ready.svg",
+                  ),
                 )
               ],
             ),

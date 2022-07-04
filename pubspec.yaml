@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^1.2.3
   smooth_page_indicator: ^1.0.0+2
+  flutter_svg: ^0.22.0
 
 flutter_native_splash:
   color:  "#ffffff"
@@ -55,22 +56,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/logo/wardrobe_logo.png
-     - assets/logo/onboarding_logo.png
-     - assets/logo/onboarding2_image.png
-     - assets/logo/appbar_logo.png
+     - assets/logo/
      - assets/icons/menu_icon.png
-     - assets/icons/bCalendar.png
-     - assets/icons/tCalendar.png
-     - assets/icons/bComb.png
-     - assets/icons/tComb.png
-     - assets/icons/tUser.png
-     - assets/icons/bUser.png
-     - assets/icons/bWardrobe.png
-     - assets/icons/tWardrobe.png
-     - assets/succes.png
+     - assets/onboarding2_image.svg
+     - assets/ready.svg
      - assets/wardrobe.png
-      
+     - assets/svg/
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

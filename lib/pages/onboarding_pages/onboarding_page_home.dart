@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_1.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_2.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_3.dart';

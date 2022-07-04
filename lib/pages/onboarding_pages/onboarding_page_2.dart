@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 
@@ -24,7 +25,7 @@ class OnboardingPage2 extends StatelessWidget {
                 Positioned(
                     top: MediaQuery.of(context).size.height * 0.1,
                     left: MediaQuery.of(context).size.width * 0.2,
-                    child: Image.asset("assets/logo/onboarding2_image.png"))
+                    child: SvgPicture.asset("assets/onboarding2_image.svg"))
               ],
             ),
           ),

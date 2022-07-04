@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,42 +12,43 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+        /*leading: IconButton(
           icon: Image.asset("assets/icons/menu_icon.png"),
           onPressed: () => Scaffold.of(context).openDrawer(),
-        ),
-        title: Image.asset(
-          "assets/logo/appbar_logo.png",
-          width: 40,
+        ),*/
+        title: SvgPicture.asset(
+          "assets/app_bar_logo.svg",
         ),
         centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 2,
+          currentIndex: index,
+          onTap: (val) {
+            setState(() {
+              index = val;
+            });
+          },
           type: BottomNavigationBarType.fixed,
           backgroundColor: primaryColor,
           items: [
             BottomNavigationBarItem(
-                icon: Image.asset("assets/icons/tWardrobe.png", width: 24),
+                icon: SvgPicture.asset("assets/svg/tWardrobe.svg", width: 30),
                 activeIcon:
-                    Image.asset("assets/icons/bWardrobe.png", width: 24),
+                    SvgPicture.asset("assets/svg/bWardrobe.svg", width: 30),
                 label: ""),
             BottomNavigationBarItem(
-                icon: Image.asset("assets/icons/tComb.png", width: 24),
-                activeIcon: Image.asset("assets/icons/bComb.png", width: 24),
+                icon: SvgPicture.asset("assets/svg/tComb.svg", width: 30),
+                activeIcon: SvgPicture.asset("assets/svg/bComb.svg", width: 30),
                 label: ""),
             BottomNavigationBarItem(
-                icon: Image.asset("assets/icons/tCalendar.png", width: 24),
+                icon: SvgPicture.asset("assets/svg/tCalendar.svg", width: 30),
                 activeIcon:
-                    Image.asset("assets/icons/bCalendar.png", width: 24),
-                label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset("assets/icons/tUser.png", width: 24),
-                activeIcon: Image.asset("assets/icons/bUser.png", width: 24),
+                    SvgPicture.asset("assets/svg/bCalendar.svg", width: 30),
                 label: ""),
           ]),
       body: Container(
