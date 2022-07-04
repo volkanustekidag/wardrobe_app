@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 
 Padding textFromFieldBuild(String hintText) {
@@ -7,7 +8,7 @@ Padding textFromFieldBuild(String hintText) {
     child: Container(
       decoration: BoxDecoration(
           boxShadow: textFromFieldShadow,
-          color: Color(0xFFF6F6F6),
+          color: secColor,
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
