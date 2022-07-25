@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/const.dart';
 import 'package:sizer/sizer.dart';
@@ -103,7 +104,7 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
               child: GridView.count(
                 crossAxisCount: 2,
                 childAspectRatio: 0.7,
-                children: List.generate(4, (index) {
+                children: List.generate(6, (index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -111,6 +112,44 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
                       decoration: BoxDecoration(
                           color: secColor,
                           borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.yellow,
+                                maxRadius: 6.sp,
+                                minRadius: 5,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: Image.asset(
+                                "assets/dress.png",
+                                width: 30.w,
+                              ),
+                            ),
+                            Text("Yellow Dress",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12.sp,
+                                    color: Colors.black)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset("assets/svg/b_fav.svg"),
+                                SvgPicture.asset("assets/svg/b_fav.svg"),
+                                SvgPicture.asset("assets/svg/b_fav.svg"),
+                                SvgPicture.asset("assets/svg/b_fav.svg"),
+                                SvgPicture.asset("assets/svg/g_fav.svg"),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   );
                 }),
