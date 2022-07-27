@@ -32,6 +32,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_svg: ^0.22.0
   sizer: ^2.0.15
+  flutter_rating_bar: ^4.0.0
 
 flutter_native_splash:
   color:  "#ffffff"
@@ -62,6 +63,7 @@ flutter:
      - assets/onboarding2_image.svg
      - assets/ready.svg
      - assets/wardrobe.png
+     - assets/dress.png
      - assets/svg/
      
 
