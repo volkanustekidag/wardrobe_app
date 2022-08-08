@@ -33,6 +33,9 @@ dependencies:
   flutter_svg: ^0.22.0
   sizer: ^2.0.15
   flutter_rating_bar: ^4.0.0
+  flutter_bloc: ^8.0.1
+  equatable: ^2.0.3
+  list_wheel_scroll_view_x: ^0.0.2
 
 flutter_native_splash:
   color:  "#ffffff"
@@ -64,6 +67,10 @@ flutter:
      - assets/ready.svg
      - assets/wardrobe.png
      - assets/dress.png
+     - assets/dress2.png
+     - assets/dress3.png
+     - assets/dress4.png
+     - assets/photo_gallery.jpg
      - assets/svg/
      
 
