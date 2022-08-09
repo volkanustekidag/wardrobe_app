@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wardrobe_app/blocs/filter_bloc/filter_bloc.dart';
 import 'package:wardrobe_app/widgets/filter_card_item_button.dart';
 import 'package:wardrobe_app/widgets/season_item_button.dart';
 import 'package:wardrobe_app/components/textfieldform.dart';
@@ -23,6 +25,24 @@ class CategoryItemPage extends StatefulWidget {
 
 class _CategoryItemPageState extends State<CategoryItemPage> {
   List<bool> isSelected = List.generate(4, (index) => false);
+  ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    BlocProvider.of<FilterBloc>(context)
+        .add(ChangeFilterVisibilityEvent(visibility: true));
+
+    scrollController.addListener(() {
+      if (scrollController.position.pixels > 0)
+        BlocProvider.of<FilterBloc>(context)
+            .add(ChangeFilterVisibilityEvent(visibility: false));
+      else
+        BlocProvider.of<FilterBloc>(context)
+            .add(ChangeFilterVisibilityEvent(visibility: true));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,81 +80,93 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
           label: Icon(Icons.add)),
       body: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: deviceHeight(context) * 0.07,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: textFromFieldShadow,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Spacer(),
-                    Expanded(
-                      flex: 2,
-                      child: IconButton(
-                        onPressed: () {
-                          filterModalBottomSheetBuild(context);
-                        },
-                        icon: Row(
+          BlocConsumer<FilterBloc, FilterState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is FilterVisibilityState) {
+                return AnimatedOpacity(
+                  opacity: state.visibility ? 1 : 0,
+                  duration: Duration(seconds: 1),
+                  child: Visibility(
+                    visible: state.visibility,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: deviceHeight(context) * 0.07,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: textFromFieldShadow,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Icon(
-                              Icons.filter_alt_outlined,
-                              color: primaryColor,
-                            ),
+                            Spacer(),
                             Expanded(
-                                child: Text(
-                              "Filter",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  color: primaryColor,
-                                  fontSize: 12.sp),
-                            ))
+                              flex: 2,
+                              child: IconButton(
+                                onPressed: () {
+                                  filterModalBottomSheetBuild(context);
+                                },
+                                icon: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.filter_alt_outlined,
+                                      color: primaryColor,
+                                    ),
+                                    Expanded(
+                                        child: Text(
+                                      "Filter",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          color: primaryColor,
+                                          fontSize: 12.sp),
+                                    ))
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            Expanded(
+                              flex: 2,
+                              child: IconButton(
+                                onPressed: () {
+                                  showModalCupertinoPickerBuild(context);
+                                },
+                                icon: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.swap_horiz_outlined,
+                                      color: primaryColor,
+                                    ),
+                                    Expanded(
+                                        child: Text(
+                                      "Short",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          color: primaryColor,
+                                          fontSize: 12.sp),
+                                    ))
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
-                    Spacer(),
-                    Expanded(
-                      flex: 2,
-                      child: IconButton(
-                        onPressed: () {
-                          showModalCupertinoPickerBuild(context);
-                        },
-                        icon: Row(
-                          children: [
-                            Icon(
-                              Icons.swap_horiz_outlined,
-                              color: primaryColor,
-                            ),
-                            Expanded(
-                                child: Text(
-                              "Short",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  color: primaryColor,
-                                  fontSize: 12.sp),
-                            ))
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                  ),
+                );
+              }
+              return Container();
+            },
           ),
-          Expanded(
-            flex: 9,
+          Flexible(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.count(
                 crossAxisCount: 2,
+                controller: scrollController,
                 childAspectRatio: 0.7,
                 children: List.generate(6, (index) {
                   return Padding(
