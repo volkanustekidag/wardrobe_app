@@ -7,7 +7,7 @@ part 'filter_state.dart';
 class FilterBloc extends Bloc<FilterEvent, FilterState> {
   FilterBloc() : super(FilterInitial()) {
     on<ChangeFilterVisibilityEvent>((event, emit) {
-      emit(FilterVisibilityState(visible: event.visibility));
+      emit(FilterVisibilityState(visibility: event.visibility));
     });
   }
 }

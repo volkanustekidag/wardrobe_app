@@ -10,10 +10,10 @@ abstract class FilterState extends Equatable {
 class FilterInitial extends FilterState {}
 
 class FilterVisibilityState extends FilterState {
-  bool visible;
+  bool visibility;
 
-  FilterVisibilityState({this.visible});
+  FilterVisibilityState({this.visibility});
 
   @override
-  List<Object> get props => [visible];
+  List<Object> get props => [visibility];
 }
