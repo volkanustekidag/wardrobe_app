@@ -30,7 +30,7 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Combines",
+        title: Text("Dresses",
             style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp)),
         centerTitle: true,
         leading: IconButton(
@@ -70,9 +70,7 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: textFromFieldShadow,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10))),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
