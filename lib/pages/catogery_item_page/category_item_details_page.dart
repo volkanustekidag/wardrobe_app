@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wardrobe_app/widgets/filter_card_item_button.dart';
 import 'package:wardrobe_app/widgets/season_item_button.dart';
 import 'package:wardrobe_app/components/textfieldform.dart';
@@ -28,17 +29,25 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        title: Text("Dresses"),
+        backgroundColor: Colors.white,
+        title: Text("Combines",
+            style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp)),
         centerTitle: true,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: primaryColor,
+            )),
         actions: [
           PopupMenuButton<MenuItem>(
             onSelected: (value) => onSelected(context, value),
+            icon: Icon(
+              Icons.more_vert,
+              color: primaryColor,
+            ),
             itemBuilder: (context) =>
                 [...MenuItems.itemsFirst.map(buildItem).toList()],
           )
@@ -54,68 +63,72 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
         children: [
           Expanded(
             flex: 1,
-            child: Container(
-              height: deviceHeight(context) * 0.07,
-              decoration: BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Spacer(),
-                  Expanded(
-                    flex: 2,
-                    child: IconButton(
-                      onPressed: () {
-                        filterModalBottomSheetBuild(context);
-                      },
-                      icon: Row(
-                        children: [
-                          Icon(
-                            Icons.filter_alt_outlined,
-                            color: Colors.white,
-                          ),
-                          Expanded(
-                              child: Text(
-                            "Filter",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white,
-                                fontSize: 12.sp),
-                          ))
-                        ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: deviceHeight(context) * 0.07,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: textFromFieldShadow,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Spacer(),
+                    Expanded(
+                      flex: 2,
+                      child: IconButton(
+                        onPressed: () {
+                          filterModalBottomSheetBuild(context);
+                        },
+                        icon: Row(
+                          children: [
+                            Icon(
+                              Icons.filter_alt_outlined,
+                              color: primaryColor,
+                            ),
+                            Expanded(
+                                child: Text(
+                              "Filter",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: primaryColor,
+                                  fontSize: 12.sp),
+                            ))
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Spacer(),
-                  Expanded(
-                    flex: 2,
-                    child: IconButton(
-                      onPressed: () {
-                        showModalCupertinoPickerBuild(context);
-                      },
-                      icon: Row(
-                        children: [
-                          Icon(
-                            Icons.swap_horiz_outlined,
-                            color: Colors.white,
-                          ),
-                          Expanded(
-                              child: Text(
-                            "Short",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white,
-                                fontSize: 12.sp),
-                          ))
-                        ],
+                    Spacer(),
+                    Expanded(
+                      flex: 2,
+                      child: IconButton(
+                        onPressed: () {
+                          showModalCupertinoPickerBuild(context);
+                        },
+                        icon: Row(
+                          children: [
+                            Icon(
+                              Icons.swap_horiz_outlined,
+                              color: primaryColor,
+                            ),
+                            Expanded(
+                                child: Text(
+                              "Short",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: primaryColor,
+                                  fontSize: 12.sp),
+                            ))
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -141,7 +154,8 @@ class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
                         child: Container(
                           height: deviceHeight(context) * 0.1,
                           decoration: BoxDecoration(
-                              color: secColor,
+                              color: Colors.white,
+                              boxShadow: textFromFieldShadow,
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
