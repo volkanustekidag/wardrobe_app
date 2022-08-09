@@ -14,15 +14,14 @@ import 'package:wardrobe_app/data/menu_items.dart';
 import 'package:wardrobe_app/models/menu_item.dart';
 import 'package:wardrobe_app/pages/clothes_detail_page/clothes_detail_page.dart';
 
-class CategoryItemDetailsPage extends StatefulWidget {
-  const CategoryItemDetailsPage({Key key}) : super(key: key);
+class CategoryItemPage extends StatefulWidget {
+  const CategoryItemPage({Key key}) : super(key: key);
 
   @override
-  State<CategoryItemDetailsPage> createState() =>
-      _CategoryItemDetailsPageState();
+  State<CategoryItemPage> createState() => _CategoryItemPageState();
 }
 
-class _CategoryItemDetailsPageState extends State<CategoryItemDetailsPage> {
+class _CategoryItemPageState extends State<CategoryItemPage> {
   List<bool> isSelected = List.generate(4, (index) => false);
 
   @override

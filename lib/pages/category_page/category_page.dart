@@ -6,7 +6,7 @@ import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/const.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 import 'package:wardrobe_app/data/icon_asset_items.dart';
-import 'package:wardrobe_app/pages/catogery_item_page/category_item_details_page.dart';
+import 'package:wardrobe_app/pages/catogery_item_page/category_item_page.dart';
 import 'package:sizer/sizer.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -84,8 +84,7 @@ class _CategoryPageState extends State<CategoryPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        CategoryItemDetailsPage()));
+                                    builder: (context) => CategoryItemPage()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
