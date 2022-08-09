@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/const.dart';
 import 'package:wardrobe_app/constants/styles.dart';
@@ -17,10 +18,15 @@ class _CombineDetailPageState extends State<CombineDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
         backgroundColor: Colors.transparent,
+        title: Text(
+          "Combine Details",
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+        ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -41,67 +47,47 @@ class _CombineDetailPageState extends State<CombineDetailPage> {
           )
         ],
       ),
-      body: Stack(
+      body: Column(
         children: [
-          Column(
-            children: [
-              Container(
-                height: deviceHeight(context) * 0.8,
-                child: ListView.builder(
-                  itemExtent: 200,
-                  scrollDirection: Axis.vertical,
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      padding: EdgeInsets.all(10),
-                      child: Image.asset(
-                        "assets/dress.png",
-                        width: 100,
-                      ),
-                    );
-                  },
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: deviceWidth(context),
-                  height: deviceHeight(context) * 0.2,
-                  decoration: BoxDecoration(
-                      color: primaryColor,
-                      boxShadow: textFromFieldShadow,
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          topLeft: Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "My summer combine",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15.sp),
-                    ),
+          Container(
+            height: deviceHeight(context) * 0.9,
+            child: ListView.builder(
+              itemExtent: 200,
+              scrollDirection: Axis.vertical,
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                return Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset(
+                    "assets/dress.png",
+                    width: 100,
                   ),
-                ),
-              )
-            ],
-          ),
-          Positioned(
-            bottom: deviceHeight(context) * 0.01,
-            right: deviceWidth(context) * 0.05,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: primaryColor, borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text("50£",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        color: Colors.white)),
-              ),
+                );
+              },
             ),
           ),
+          Expanded(
+            child: Container(
+              width: deviceWidth(context),
+              height: deviceHeight(context) * 0.1,
+              decoration: BoxDecoration(
+                  color: primaryColor,
+                  boxShadow: textFromFieldShadow,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      topLeft: Radius.circular(10))),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  "My summer combine",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15.sp),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
