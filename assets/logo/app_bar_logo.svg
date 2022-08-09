@@ -1,15 +1,15 @@
-<svg width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="27.3333" cy="28" r="25.8333" fill="white" stroke="#323232" stroke-width="3"/>
-<rect x="24.3333" y="3" width="3.33333" height="38.3333" fill="#323232"/>
-<rect width="1.66667" height="9" transform="matrix(1 0 0 -1 25 53)" fill="#323232"/>
-<path d="M29.3333 3C31.1743 3 32.6667 4.49238 32.6667 6.33333V41.3333H29.3333V3Z" fill="#323232"/>
-<rect width="1.66667" height="9" transform="matrix(1 0 0 -1 28.6667 53)" fill="#323232"/>
-<path d="M5 38H24.3333V41.3333H8.33334C6.49239 41.3333 5 39.8409 5 38Z" fill="#323232"/>
-<path d="M8.66667 44H25.6667V45.6667H10.3333C9.41286 45.6667 8.66667 44.9205 8.66667 44Z" fill="#323232"/>
-<path d="M28.6667 44H45.6667C45.6667 44.9205 44.9205 45.6667 44 45.6667H28.6667V44Z" fill="#323232"/>
-<path d="M29.6667 38H49.6667C49.6667 39.8409 48.1743 41.3333 46.3333 41.3333H29.6667V38Z" fill="#323232"/>
-<circle cx="20.6667" cy="23" r="1.66667" fill="#323232"/>
-<circle cx="36.3333" cy="23" r="1.66667" fill="#323232"/>
-<circle cx="39.5" cy="47.5" r="0.833333" fill="#323232"/>
-<circle cx="15.1667" cy="47.5" r="0.833333" fill="#323232"/>
+<svg width="146" height="150" viewBox="0 0 146 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="73" cy="75" r="73" fill="#0A0908"/>
+<rect x="61" width="10" height="115" fill="white"/>
+<rect width="5" height="27" transform="matrix(1 0 0 -1 66 150)" fill="white"/>
+<path d="M76 0H82C84.2091 0 86 1.79086 86 4V115H76V0Z" fill="white"/>
+<rect width="5" height="27" transform="matrix(1 0 0 -1 77 150)" fill="white"/>
+<path d="M6 105H64V115H12C8.68629 115 6 112.314 6 109V105Z" fill="white"/>
+<path d="M17 123H68V128H22C19.2386 128 17 125.761 17 123Z" fill="white"/>
+<path d="M77 123H128C128 125.761 125.761 128 123 128H77V123Z" fill="white"/>
+<path d="M80 105H140V108C140 111.866 136.866 115 133 115H80V105Z" fill="white"/>
+<circle cx="48" cy="60" r="5" fill="white"/>
+<circle cx="99" cy="60" r="5" fill="white"/>
+<circle cx="109.5" cy="133.5" r="2.5" fill="white"/>
+<path d="M39 133.5C39 134.881 37.8807 136 36.5 136C35.1193 136 34 134.881 34 133.5C34 132.119 35.1193 131 36.5 131C37.8807 131 39 132.119 39 133.5Z" fill="white"/>
 </svg>
