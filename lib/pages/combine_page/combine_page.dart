@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wardrobe_app/blocs/combine_search_bloc/combine_search_bloc.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/const.dart';
 import 'package:sizer/sizer.dart';
@@ -24,22 +26,19 @@ class _CombinePageState extends State<CombinePage> {
   ];
 
   final ScrollController scrollcontroller = new ScrollController();
-  bool scrollVisibility = true;
 
   @override
   void initState() {
+    BlocProvider.of<CombineSearchBloc>(context)
+        .add(ChangeSearchVisibilityEvent(visibility: true));
+
     scrollcontroller.addListener(() {
       if (scrollcontroller.position.pixels > 0) {
-        setState(() {
-          scrollVisibility = false;
-        });
-        print(scrollcontroller.position.pixels);
-        print(scrollcontroller.position.maxScrollExtent);
+        BlocProvider.of<CombineSearchBloc>(context)
+            .add(ChangeSearchVisibilityEvent(visibility: false));
       } else {
-        print(scrollVisibility);
-        setState(() {
-          scrollVisibility = true;
-        });
+        BlocProvider.of<CombineSearchBloc>(context)
+            .add(ChangeSearchVisibilityEvent(visibility: true));
       }
     });
     super.initState();
@@ -65,42 +64,50 @@ class _CombinePageState extends State<CombinePage> {
       ),
       body: Column(
         children: [
-          AnimatedOpacity(
-            duration: Duration(seconds: 1),
-            opacity: scrollVisibility ? 1 : 0,
-            child: Visibility(
-              visible: scrollVisibility,
-              child: Container(
-                  height: deviceHeight(context) * 0.08,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+          BlocConsumer<CombineSearchBloc, CombineSearchState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is SearchVisibilityState) {
+                return AnimatedOpacity(
+                  duration: Duration(seconds: 1),
+                  opacity: state.visibility ? 1 : 0,
+                  child: Visibility(
+                    visible: state.visibility,
                     child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: textFromFieldShadow,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: deviceHeight(context) * 0.07,
-                      child: TextFormField(
-                          onChanged: (text) {},
-                          decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            prefixIcon: Icon(
-                              Icons.search,
-                              color: primaryColor,
-                            ),
-                            hintText: "Search Combine",
-                            hintStyle: TextStyle(
-                                color: primaryColor,
-                                fontWeight: FontWeight.w400),
-                            border: InputBorder.none,
-                          )),
-                    ),
-                  )),
-            ),
+                        height: deviceHeight(context) * 0.08,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10))),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: textFromFieldShadow,
+                                borderRadius: BorderRadius.circular(10)),
+                            height: deviceHeight(context) * 0.07,
+                            child: TextFormField(
+                                onChanged: (text) {},
+                                decoration: InputDecoration(
+                                  fillColor: Colors.white,
+                                  prefixIcon: Icon(
+                                    Icons.search,
+                                    color: primaryColor,
+                                  ),
+                                  hintText: "Search Combine",
+                                  hintStyle: TextStyle(
+                                      color: primaryColor,
+                                      fontWeight: FontWeight.w400),
+                                  border: InputBorder.none,
+                                )),
+                          ),
+                        )),
+                  ),
+                );
+              }
+              return Container();
+            },
           ),
           Flexible(
             child: ListView.builder(
