@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_1.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_2.dart';
 import 'package:wardrobe_app/pages/onboarding_pages/onboarding_page_3.dart';
@@ -40,8 +41,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   count: 3,
                   effect: ExpandingDotsEffect(
                       dotHeight: 5,
-                      activeDotColor: Color(0xff323232),
-                      dotColor: Color(0xff323232)),
+                      activeDotColor: primaryColor,
+                      dotColor: primaryColor),
                 ),
               ),
             ),

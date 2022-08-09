@@ -63,7 +63,7 @@ class OnboardingPage3 extends StatelessWidget {
                       "\nLet's Start!\n",
                     ),
                   ),
-                  style: ElevatedButton.styleFrom(primary: Color(0xff323232)),
+                  style: ElevatedButton.styleFrom(primary: primaryColor),
                 ),
               ],
             ),

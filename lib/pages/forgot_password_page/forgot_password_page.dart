@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wardrobe_app/components/textfieldform.dart';
+import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -52,7 +53,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     "\nReset Password\n",
                   ),
                 ),
-                style: ElevatedButton.styleFrom(primary: Color(0xff323232)),
+                style: ElevatedButton.styleFrom(primary: primaryColor),
               ),
               Spacer(),
             ],
