@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xff323232);
+const Color primaryColor = Color(0xff0A0908);
 const Color secColor = Color(0xffECECEE);
 const Color textColor = Color(0xff969696);
 const iconColor = Color(0XFF3F3F3F);
