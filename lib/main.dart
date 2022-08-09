@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
               accentColor: primaryColor,
               bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                backgroundColor: primaryColor,
+                backgroundColor: Colors.white,
               ),
               appBarTheme: AppBarTheme(
                 backgroundColor: primaryColor,
