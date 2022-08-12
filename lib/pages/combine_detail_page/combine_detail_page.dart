@@ -25,7 +25,8 @@ class _CombineDetailPageState extends State<CombineDetailPage> {
         backgroundColor: Colors.transparent,
         title: Text(
           "Combine Details",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(
+              color: primaryColor, fontSize: 20.sp, shadows: widgetShadow),
         ),
         leading: IconButton(
             onPressed: () {
@@ -72,7 +73,7 @@ class _CombineDetailPageState extends State<CombineDetailPage> {
               height: deviceHeight(context) * 0.1,
               decoration: BoxDecoration(
                   color: primaryColor,
-                  boxShadow: textFromFieldShadow,
+                  boxShadow: widgetShadow,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(10),
                       topLeft: Radius.circular(10))),
