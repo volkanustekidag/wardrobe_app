@@ -39,137 +39,139 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Column(
             children: [
-              Container(
-                height: deviceHeight(context) * 0.15,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30))),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/svg/price_tag.svg",
-                                  width: 10.w,
-                                ),
-                                Text(
-                                  "Price",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12.sp),
-                                ),
-                                Text("400\$")
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/svg/hanger.svg",
-                                  width: 10.w,
-                                ),
-                                Text(
-                                  "Clothes",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12.sp),
-                                ),
-                                Text("10")
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/svg/bComb.svg",
-                                  width: 10.w,
-                                ),
-                                Text(
-                                  "Combines",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12.sp),
-                                ),
-                                Text("10")
-                              ],
-                            ),
-                          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: deviceHeight(context) * 0.15,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/price_tag.svg",
+                                    width: 10.w,
+                                  ),
+                                  Text(
+                                    "Price",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.sp),
+                                  ),
+                                  Text("400\$")
+                                ],
+                              ),
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/hanger.svg",
+                                    width: 10.w,
+                                  ),
+                                  Text(
+                                    "Clothes",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.sp),
+                                  ),
+                                  Text("10")
+                                ],
+                              ),
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/bComb.svg",
+                                    width: 10.w,
+                                  ),
+                                  Text(
+                                    "Combines",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.sp),
+                                  ),
+                                  Text("10")
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: deviceHeight(context) * 0.15,
-              ),
               Flexible(
-                child: Container(
-                  height: deviceHeight(context) * 0.6,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                      )),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Container(
-                      child: ListView(
-                        children: [
-                          ProfileCardItem(
-                            title: "Update Password",
-                            iconData: Icons.lock_open_sharp,
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              size: 3.w,
-                              color: primaryColor,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: deviceHeight(context) * 0.6,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10.0),
+                      child: Container(
+                        child: ListView(
+                          children: [
+                            ProfileCardItem(
+                              title: "Update Password",
+                              iconData: Icons.lock_open_sharp,
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 3.w,
+                                color: primaryColor,
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            UpdatePasswordPage()));
+                              },
                             ),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          UpdatePasswordPage()));
-                            },
-                          ),
-                          ProfileCardItem(
-                            title: "E-mail Verication",
-                            iconData: Icons.mark_email_unread_outlined,
-                          ),
-                          ProfileCardItem(
-                            title: "Delete Account",
-                            iconData: Icons.delete_outline,
-                          ),
-                          ProfileCardItem(
-                            title: "App Settings",
-                            iconData: Icons.app_settings_alt_outlined,
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              size: 3.w,
-                              color: primaryColor,
+                            ProfileCardItem(
+                              title: "E-mail Verication",
+                              iconData: Icons.mark_email_unread_outlined,
                             ),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AppSettingsPage()));
-                            },
-                          ),
-                          ProfileCardItem(
-                            title: "Exit",
-                            iconData: Icons.exit_to_app_outlined,
-                          ),
-                        ],
+                            ProfileCardItem(
+                              title: "Delete Account",
+                              iconData: Icons.delete_outline,
+                            ),
+                            ProfileCardItem(
+                              title: "App Settings",
+                              iconData: Icons.app_settings_alt_outlined,
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 3.w,
+                                color: primaryColor,
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            AppSettingsPage()));
+                              },
+                            ),
+                            ProfileCardItem(
+                              title: "Exit",
+                              iconData: Icons.exit_to_app_outlined,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
