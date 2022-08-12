@@ -7,7 +7,7 @@ Padding textFromFieldBuild(String hintText) {
     padding: const EdgeInsets.only(bottom: 20),
     child: Container(
       decoration: BoxDecoration(
-          boxShadow: textFromFieldShadow,
+          boxShadow: widgetShadow,
           color: secColor,
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(

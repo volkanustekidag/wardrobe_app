@@ -95,7 +95,7 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
                         height: deviceHeight(context) * 0.07,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            boxShadow: textFromFieldShadow,
+                            boxShadow: widgetShadow,
                             borderRadius: BorderRadius.circular(10)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -182,7 +182,7 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
                         height: deviceHeight(context) * 0.1,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            boxShadow: textFromFieldShadow,
+                            boxShadow: widgetShadow,
                             borderRadius: BorderRadius.circular(20)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -366,7 +366,7 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
                           decoration: BoxDecoration(
                               color: secColor,
                               borderRadius: BorderRadius.circular(20),
-                              boxShadow: textFromFieldShadow),
+                              boxShadow: widgetShadow),
                           child: Padding(
                             padding: EdgeInsets.all(16),
                             child: Column(

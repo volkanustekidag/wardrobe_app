@@ -84,7 +84,7 @@ class _CombinePageState extends State<CombinePage> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                boxShadow: textFromFieldShadow,
+                                boxShadow: widgetShadow,
                                 borderRadius: BorderRadius.circular(10)),
                             height: deviceHeight(context) * 0.07,
                             child: TextFormField(
@@ -119,7 +119,7 @@ class _CombinePageState extends State<CombinePage> {
                   child: Container(
                     height: deviceHeight(context) * 0.2,
                     decoration: BoxDecoration(
-                      boxShadow: textFromFieldShadow,
+                      boxShadow: widgetShadow,
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),

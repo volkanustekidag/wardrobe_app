@@ -193,7 +193,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: secColor,
-                      boxShadow: textFromFieldShadow,
+                      boxShadow: widgetShadow,
                     ),
                     child: GridView.count(
                       crossAxisCount: 5,

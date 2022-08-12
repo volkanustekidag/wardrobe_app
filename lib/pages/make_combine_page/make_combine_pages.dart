@@ -60,7 +60,7 @@ class _MakeCombinePageState extends State<MakeCombinePage> {
         height: deviceHeight(context) * 0.2,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: textFromFieldShadow,
+          boxShadow: widgetShadow,
         ),
         child: ListWheelScrollViewX(
             scrollDirection: Axis.horizontal,
@@ -95,7 +95,7 @@ class _MakeCombinePageState extends State<MakeCombinePage> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
                   Center(
