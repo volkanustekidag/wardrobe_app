@@ -18,11 +18,10 @@ class _ClothesDetailState extends State<ClothesDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: secColor,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -48,20 +47,23 @@ class _ClothesDetailState extends State<ClothesDetail> {
           Container(
             decoration: BoxDecoration(
                 color: secColor,
-                boxShadow: textFromFieldShadow,
+                boxShadow: widgetShadow,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40))),
-            height: deviceHeight(context) * 0.5,
+            height: deviceHeight(context) * 0.4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Align(
                   alignment: Alignment.topRight,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.yellow,
-                    maxRadius: 6.sp,
-                    minRadius: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.yellow,
+                      maxRadius: 6.sp,
+                      minRadius: 5,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -72,35 +74,38 @@ class _ClothesDetailState extends State<ClothesDetail> {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.favorite,
-                      color: primaryColor,
-                      size: 12.sp,
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: primaryColor,
-                      size: 12.sp,
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: primaryColor,
-                      size: 12.sp,
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: primaryColor,
-                      size: 12.sp,
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: favoriteIconColor,
-                      size: 12.sp,
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.favorite,
+                        color: primaryColor,
+                        size: 12.sp,
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: primaryColor,
+                        size: 12.sp,
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: primaryColor,
+                        size: 12.sp,
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: primaryColor,
+                        size: 12.sp,
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: favoriteIconColor,
+                        size: 12.sp,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
