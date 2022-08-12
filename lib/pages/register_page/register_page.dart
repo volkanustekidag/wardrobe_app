@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wardrobe_app/components/textfieldform.dart';
+import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 import 'package:wardrobe_app/pages/login_page/login_page.dart';
 
@@ -48,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     "\nRegister\n",
                   ),
                 ),
-                style: ElevatedButton.styleFrom(primary: Color(0xff323232)),
+                style: ElevatedButton.styleFrom(primary: primaryColor),
               ),
               Spacer(),
               Row(

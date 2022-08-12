@@ -7,6 +7,7 @@ import 'package:wardrobe_app/blocs/filter_bloc/filter_bloc.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/pages/home_page/home_page.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wardrobe_app/pages/login_page/login_page.dart';
 
 void main() {
   BlocOverrides.runZoned(() => runApp(MyApp()),
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: AppBarTheme(
                 backgroundColor: primaryColor,
               )),
-          home: HomePage(),
+          home: LoginPage(),
         );
       }),
     );
