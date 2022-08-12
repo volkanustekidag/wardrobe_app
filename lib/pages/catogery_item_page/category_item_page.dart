@@ -178,74 +178,74 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
                             MaterialPageRoute(
                                 builder: (context) => ClothesDetail()));
                       },
-                      child: Hero(
-                        tag: index,
-                        child: Container(
-                          height: deviceHeight(context) * 0.1,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: textFromFieldShadow,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.yellow,
-                                    maxRadius: 6.sp,
-                                    minRadius: 5,
-                                  ),
+                      child: Container(
+                        height: deviceHeight(context) * 0.1,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: textFromFieldShadow,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.yellow,
+                                  maxRadius: 6.sp,
+                                  minRadius: 5,
                                 ),
-                                Expanded(
-                                  flex: 3,
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Hero(
+                                  tag: index,
                                   child: Image.asset(
                                     "assets/dress.png",
                                     width: 30.w,
                                   ),
                                 ),
-                                DefaultTextStyle(
-                                  style: TextStyle(),
-                                  child: Text("Yellow Dress",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12.sp,
-                                          color: Colors.black)),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.favorite,
-                                      color: primaryColor,
-                                      size: 12.sp,
-                                    ),
-                                    Icon(
-                                      Icons.favorite,
-                                      color: primaryColor,
-                                      size: 12.sp,
-                                    ),
-                                    Icon(
-                                      Icons.favorite,
-                                      color: primaryColor,
-                                      size: 12.sp,
-                                    ),
-                                    Icon(
-                                      Icons.favorite,
-                                      color: primaryColor,
-                                      size: 12.sp,
-                                    ),
-                                    Icon(
-                                      Icons.favorite,
-                                      color: favoriteIconColor,
-                                      size: 12.sp,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
+                              ),
+                              DefaultTextStyle(
+                                style: TextStyle(),
+                                child: Text("Yellow Dress",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.sp,
+                                        color: Colors.black)),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.favorite,
+                                    color: primaryColor,
+                                    size: 12.sp,
+                                  ),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: primaryColor,
+                                    size: 12.sp,
+                                  ),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: primaryColor,
+                                    size: 12.sp,
+                                  ),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: primaryColor,
+                                    size: 12.sp,
+                                  ),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: favoriteIconColor,
+                                    size: 12.sp,
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                         ),
                       ),

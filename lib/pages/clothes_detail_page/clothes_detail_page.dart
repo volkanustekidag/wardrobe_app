@@ -18,10 +18,11 @@ class _ClothesDetailState extends State<ClothesDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        backgroundColor: secColor,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -44,67 +45,64 @@ class _ClothesDetailState extends State<ClothesDetail> {
       ),
       body: Column(
         children: [
-          Hero(
-            tag: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: secColor,
-                  boxShadow: textFromFieldShadow,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40))),
-              height: deviceHeight(context) * 0.4,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Container(
+            decoration: BoxDecoration(
+                color: secColor,
+                boxShadow: textFromFieldShadow,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40))),
+            height: deviceHeight(context) * 0.5,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.yellow,
+                    maxRadius: 6.sp,
+                    minRadius: 5,
+                  ),
+                ),
+                Expanded(
+                  child: Hero(
+                    tag: 0,
+                    child: Image.asset(
+                      "assets/dress.png",
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.yellow,
-                        maxRadius: 6.sp,
-                        minRadius: 5,
-                      ),
+                    Icon(
+                      Icons.favorite,
+                      color: primaryColor,
+                      size: 12.sp,
                     ),
-                    Expanded(
-                      child: Image.asset(
-                        "assets/dress.png",
-                      ),
+                    Icon(
+                      Icons.favorite,
+                      color: primaryColor,
+                      size: 12.sp,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.favorite,
-                          color: primaryColor,
-                          size: 12.sp,
-                        ),
-                        Icon(
-                          Icons.favorite,
-                          color: primaryColor,
-                          size: 12.sp,
-                        ),
-                        Icon(
-                          Icons.favorite,
-                          color: primaryColor,
-                          size: 12.sp,
-                        ),
-                        Icon(
-                          Icons.favorite,
-                          color: primaryColor,
-                          size: 12.sp,
-                        ),
-                        Icon(
-                          Icons.favorite,
-                          color: favoriteIconColor,
-                          size: 12.sp,
-                        ),
-                      ],
+                    Icon(
+                      Icons.favorite,
+                      color: primaryColor,
+                      size: 12.sp,
+                    ),
+                    Icon(
+                      Icons.favorite,
+                      color: primaryColor,
+                      size: 12.sp,
+                    ),
+                    Icon(
+                      Icons.favorite,
+                      color: favoriteIconColor,
+                      size: 12.sp,
                     ),
                   ],
                 ),
-              ),
+              ],
             ),
           ),
           Align(
