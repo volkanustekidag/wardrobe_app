@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:sizer/sizer.dart';
 import 'package:wardrobe_app/constants/const.dart';
+import 'package:wardrobe_app/pages/app_settings_page/app_settings_page.dart';
+import 'package:wardrobe_app/pages/update_password_page/update_password_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
@@ -127,9 +129,21 @@ class _ProfilePageState extends State<ProfilePage> {
                           ProfileCardItem(
                             title: "Update Password",
                             iconData: Icons.lock_open_sharp,
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 3.w,
+                              color: primaryColor,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          UpdatePasswordPage()));
+                            },
                           ),
                           ProfileCardItem(
-                            title: "E-mail Verifyd",
+                            title: "E-mail Verication",
                             iconData: Icons.mark_email_unread_outlined,
                           ),
                           ProfileCardItem(
@@ -139,6 +153,17 @@ class _ProfilePageState extends State<ProfilePage> {
                           ProfileCardItem(
                             title: "App Settings",
                             iconData: Icons.app_settings_alt_outlined,
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 3.w,
+                              color: primaryColor,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AppSettingsPage()));
+                            },
                           ),
                           ProfileCardItem(
                             title: "Exit",
@@ -161,16 +186,20 @@ class _ProfilePageState extends State<ProfilePage> {
 class ProfileCardItem extends StatelessWidget {
   final title;
   final iconData;
+  final trailing;
+  final onTap;
   const ProfileCardItem({
     Key key,
     this.title,
     this.iconData,
+    this.trailing,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Card(
         elevation: ("Exit" == title || "Update Password" == title) ? 0 : 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
@@ -180,6 +209,7 @@ class ProfileCardItem extends StatelessWidget {
             iconData,
             color: primaryColor,
           ),
+          trailing: trailing,
           title: Text(
             title,
             style: TextStyle(
