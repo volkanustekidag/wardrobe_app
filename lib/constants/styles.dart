@@ -12,9 +12,9 @@ const TextStyle onboardingTitleStyle =
 
 const TextStyle onboardingContentStyle = TextStyle(fontSize: 15);
 
-List<BoxShadow> textFromFieldShadow = [
+List<BoxShadow> widgetShadow = [
   BoxShadow(
-      color: secColor,
+      color: primaryColor,
       blurRadius: 5,
       spreadRadius: 0,
       offset: Offset.fromDirection(-4, 4))
