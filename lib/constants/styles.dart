@@ -14,7 +14,7 @@ const TextStyle onboardingContentStyle = TextStyle(fontSize: 15);
 
 List<BoxShadow> widgetShadow = [
   BoxShadow(
-      color: primaryColor,
+      color: secColor,
       blurRadius: 5,
       spreadRadius: 0,
       offset: Offset.fromDirection(-4, 4))
