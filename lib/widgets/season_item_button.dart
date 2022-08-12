@@ -19,11 +19,13 @@ class _CustomSeasonItemButtonState extends State<CustomSeasonItemButton> {
       child: Container(
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
-              color: widget.isSelected ? primaryColor : seasonButtonHintColor,
+              border: Border.all(color: primaryColor, width: 1),
+              color: widget.isSelected ? primaryColor : Colors.transparent,
               borderRadius: BorderRadius.circular(10)),
           child: Text(
             widget.buttonTitle,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+                color: widget.isSelected ? Colors.white : primaryColor),
           )),
     );
   }
