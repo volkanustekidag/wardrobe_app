@@ -61,7 +61,7 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
               color: primaryColor,
             )),
         actions: [
-          PopupMenuButton<MenuItem>(
+          PopupMenuButton<PopupMenuButtonItem>(
             onSelected: (value) => onSelected(context, value),
             icon: Icon(
               Icons.more_vert,
@@ -530,20 +530,21 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
     );
   }
 
-  PopupMenuItem<MenuItem> buildItem(MenuItem item) => PopupMenuItem<MenuItem>(
-      value: item,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Icon(
-            item.iconData,
-            color: Colors.black,
-          ),
-          Text(item.title),
-        ],
-      ));
+  PopupMenuItem<PopupMenuButtonItem> buildItem(PopupMenuButtonItem item) =>
+      PopupMenuItem<PopupMenuButtonItem>(
+          value: item,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
+                item.iconData,
+                color: Colors.black,
+              ),
+              Text(item.title),
+            ],
+          ));
 
-  onSelected(BuildContext context, MenuItem item) {
+  onSelected(BuildContext context, PopupMenuButtonItem item) {
     switch (item) {
       case MenuItems.itemEdit:
         print("edit");

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MenuItem {
+class PopupMenuButtonItem {
   final String title;
   final IconData iconData;
 
-  const MenuItem({@required this.iconData, @required this.title});
+  const PopupMenuButtonItem({@required this.iconData, @required this.title});
 }
