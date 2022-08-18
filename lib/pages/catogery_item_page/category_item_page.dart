@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wardrobe_app/blocs/filter_bloc/filter_bloc.dart';
+import 'package:wardrobe_app/pages/adding_clothes_page/adding_clothes_page.dart';
 import 'package:wardrobe_app/widgets/filter_card_item_button.dart';
-import 'package:wardrobe_app/widgets/season_item_button.dart';
-import 'package:wardrobe_app/components/textfieldform.dart';
 import 'package:wardrobe_app/constants/colors.dart';
 import 'package:wardrobe_app/constants/const.dart';
 import 'package:sizer/sizer.dart';
-import 'package:wardrobe_app/constants/strings.dart';
 import 'package:wardrobe_app/constants/styles.dart';
 import 'package:wardrobe_app/data/menu_items.dart';
 import 'package:wardrobe_app/models/menu_item.dart';
@@ -24,7 +21,6 @@ class CategoryItemPage extends StatefulWidget {
 }
 
 class _CategoryItemPageState extends State<CategoryItemPage> {
-  List<bool> isSelected = List.generate(4, (index) => false);
   ScrollController scrollController = ScrollController();
 
   @override
@@ -75,7 +71,8 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            addDressModalBottomSheetBuild(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AddingClothesPage()));
           },
           label: Icon(Icons.add)),
       body: Column(
@@ -319,159 +316,6 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
                 ),
               )
             ],
-          ),
-        );
-      },
-    );
-  }
-
-  Future<dynamic> addDressModalBottomSheetBuild(BuildContext context) {
-    return showModalBottomSheet(
-      context: context,
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (context) {
-        return Container(
-          height: deviceHeight(context) * 0.9,
-          decoration: modalBottomSheetBoxDecoration,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child:
-                            Text("Cancel", style: TextStyle(fontSize: 12.sp))),
-                    Text("Add Clothes",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12.sp)),
-                    Text(
-                      "+Add",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 12.sp),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, bottom: 20),
-                        child: Container(
-                          height: deviceHeight(context) * 0.25,
-                          decoration: BoxDecoration(
-                              color: secColor,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: widgetShadow),
-                          child: Padding(
-                            padding: EdgeInsets.all(16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  flex: 3,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.camera_alt,
-                                        size: 10.w,
-                                        color: iconColor,
-                                      ),
-                                      Text("  or  "),
-                                      Icon(
-                                        Icons.photo_library,
-                                        size: 10.w,
-                                        color: iconColor,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Text(
-                                  photoUpdatedDescriptionText,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 8.sp),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      textFromFieldBuild("Tittle"),
-                      textFromFieldBuild("Link"),
-                      textFromFieldBuild("Brand"),
-                      textFromFieldBuild("Price"),
-                      ToggleButtons(
-                          onPressed: (index) {
-                            setState(() {
-                              for (int i = 0; i < isSelected.length; i++) {
-                                if (i == index) {
-                                  isSelected[i] = !isSelected[i];
-                                }
-                              }
-                            });
-                          },
-                          children: [
-                            CustomSeasonItemButton(
-                              buttonTitle: "Summer",
-                              isSelected: isSelected[0],
-                            ),
-                            CustomSeasonItemButton(
-                              buttonTitle: "Fall",
-                              isSelected: isSelected[1],
-                            ),
-                            CustomSeasonItemButton(
-                              buttonTitle: "Winter",
-                              isSelected: isSelected[2],
-                            ),
-                            CustomSeasonItemButton(
-                              buttonTitle: "Spring",
-                              isSelected: isSelected[3],
-                            )
-                          ],
-                          renderBorder: false,
-                          fillColor: Colors.transparent,
-                          isSelected: isSelected),
-                      Padding(
-                        padding: EdgeInsets.only(top: 30.0),
-                        child: Text(
-                          "Rating",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, color: textColor),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: RatingBar(
-                          itemSize: 7.w,
-                          ratingWidget: RatingWidget(
-                              empty: Icon(
-                                Icons.favorite,
-                                color: favoriteIconColor,
-                              ),
-                              full: Icon(
-                                Icons.favorite,
-                                color: primaryColor,
-                              ),
-                              half: Icon(
-                                Icons.favorite,
-                              )),
-                          onRatingUpdate: (value) {
-                            print(value);
-                          },
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
           ),
         );
       },
