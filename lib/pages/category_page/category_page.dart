@@ -32,7 +32,7 @@ class _CategoryPageState extends State<CategoryPage> {
         backgroundColor: Colors.white,
         title: Text(
           "Virtual Wardrobe",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
         ),
         centerTitle: true,
       ),

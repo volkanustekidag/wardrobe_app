@@ -24,7 +24,7 @@ class _AppSettingsPageState extends State<AppSettingsPage> {
             )),
         title: Text(
           "App Settings",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
         ),
       ),
       backgroundColor: Colors.white,

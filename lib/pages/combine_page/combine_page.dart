@@ -59,7 +59,7 @@ class _CombinePageState extends State<CombinePage> {
         backgroundColor: Colors.white,
         title: Text(
           "Combines",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
         ),
       ),
       body: Column(

@@ -39,31 +39,36 @@ class _HomePageState extends State<HomePage> {
             child: BottomNavigationBar(
                 type: BottomNavigationBarType.fixed,
                 currentIndex: currentIndex,
-                showSelectedLabels: false,
-                showUnselectedLabels: false,
                 onTap: (index) {
                   BlocProvider.of<BottomNavBloc>(context)
                       .add(ChangeCurrentIndexNavBarEvent(newIndex: index));
                 },
+                selectedItemColor: primaryColor,
+                unselectedLabelStyle: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: primaryColor,
+                ),
+                selectedLabelStyle:
+                    TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
                 items: [
                   BottomNavigationBarItem(
                       icon: SvgPicture.asset("assets/svg/tWardrobe.svg",
-                          width: 8.w),
+                          width: 6.w),
                       activeIcon: SvgPicture.asset("assets/svg/bWardrobe.svg",
-                          width: 8.w),
-                      label: ""),
+                          width: 6.w),
+                      label: "Closet"),
                   BottomNavigationBarItem(
                       icon:
-                          SvgPicture.asset("assets/svg/tComb.svg", width: 8.w),
+                          SvgPicture.asset("assets/svg/tComb.svg", width: 6.w),
                       activeIcon:
-                          SvgPicture.asset("assets/svg/bComb.svg", width: 8.w),
-                      label: ""),
+                          SvgPicture.asset("assets/svg/bComb.svg", width: 6.w),
+                      label: "Combine"),
                   BottomNavigationBarItem(
                       icon: SvgPicture.asset("assets/svg/tProfile.svg",
-                          width: 8.w),
+                          width: 6.w),
                       activeIcon: SvgPicture.asset("assets/svg/bProfile.svg",
-                          width: 8.w),
-                      label: ""),
+                          width: 6.w),
+                      label: "Profile"),
                 ]),
           );
         },

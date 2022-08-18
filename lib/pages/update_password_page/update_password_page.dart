@@ -26,7 +26,7 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> {
             )),
         title: Text(
           "Update Password",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
         ),
       ),
       backgroundColor: Colors.white,

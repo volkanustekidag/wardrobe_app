@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.white,
         title: Text(
           "Tuba Günaçgün",
-          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+          style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
         ),
       ),
       body: Stack(

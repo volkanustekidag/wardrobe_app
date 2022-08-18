@@ -26,7 +26,7 @@ class _CombineDetailPageState extends State<CombineDetailPage> {
         title: Text(
           "Combine Details",
           style: GoogleFonts.bebasNeue(
-              color: primaryColor, fontSize: 20.sp, shadows: widgetShadow),
+              color: primaryColor, fontSize: 16.sp, shadows: widgetShadow),
         ),
         leading: IconButton(
             onPressed: () {

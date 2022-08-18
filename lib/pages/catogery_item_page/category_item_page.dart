@@ -50,7 +50,7 @@ class _CategoryItemPageState extends State<CategoryItemPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text("Dresses",
-            style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp)),
+            style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp)),
         centerTitle: true,
         leading: IconButton(
             onPressed: () {

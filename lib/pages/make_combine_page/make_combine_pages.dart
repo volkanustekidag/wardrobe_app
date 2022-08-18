@@ -24,7 +24,7 @@ class _MakeCombinePageState extends State<MakeCombinePage> {
           centerTitle: true,
           title: Text(
             "Make Combine",
-            style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 20.sp),
+            style: GoogleFonts.bebasNeue(color: primaryColor, fontSize: 16.sp),
           ),
           leading: IconButton(
               onPressed: () {
@@ -120,7 +120,7 @@ class _MakeCombinePageState extends State<MakeCombinePage> {
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Image.asset(
-          "assets/${path}.png",
+          "assets/$path.png",
           width: 30.w,
         ),
       ),
